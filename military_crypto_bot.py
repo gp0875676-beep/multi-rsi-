@@ -434,7 +434,8 @@ def run_polling_loop(coins: list = None, interval_seconds: int = 300):
             gainers = get_top_gainers(top_n=3)
             scan_list = [g['symbol'] for g in gainers]
             if gainers:
-                print(f"🏆 Top Gainers: {', '.join([f\"{g['symbol']} ({g['change_pct']:+.1f}%)\" for g in gainers])}")
+                gainer_strs = [g['symbol'] + ' (' + f"{g['change_pct']:+.1f}" + '%)' for g in gainers]
+                print("🏆 Top Gainers: " + ', '.join(gainer_strs))
 
         # Scan each coin in parallel
         def scan_coin(symbol):
