@@ -1,7 +1,8 @@
 flask
 requests
 pandas
-pandas-ta
+numpy
 ccxt
 python-dotenv
 pyTelegramBotAPI
+ta
